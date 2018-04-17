@@ -31,7 +31,7 @@ def main():
         tokenized_contents = [list(word_tokenize(content)) for content in contents]
         original_tokenized_contents = [list(word_tokenize(content)) for content in original_contents]
 
-        with open('assets/first_cosine_values.txt', 'w', encoding='utf8') as result:
+        with open('assets/with_position_verification/first_cosine_values.txt', 'w', encoding='utf8') as result:
             for sentence in (tokenized_contents):
                 for original_sentence in (original_tokenized_contents):
                     vector1 = (count(sentence))
