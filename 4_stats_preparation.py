@@ -1,7 +1,7 @@
 from collections import Counter as count
 
 def main():
-        with open('assets/first_cosine_values_ranked_tagged.txt', 'r', encoding='utf8') as source:
+        with open('assets/with_position_verification/first_cosine_values_ranked_tagged.txt', 'r', encoding='utf8') as source:
             contents = (source.readlines())
             contents = [content.strip().split('=')[0].split('|') for content in contents]
             contents = [content for content in contents if len(content) == 3]
@@ -14,7 +14,7 @@ def main():
             second_position = [content[1:-1].split(',')[1][2:-1] for content in second_position]
             third_position = [content[1:-1].split(',')[1][2:-1] for content in third_position]
 
-        with open('assets/first_cosine_values_ranked_tagged_stats.txt', 'w', encoding='utf8') as result:
+        with open('assets/with_position_verification/first_cosine_values_ranked_tagged_stats.txt', 'w', encoding='utf8') as result:
             result.write('first_position :: ' + str(count(first_position)))
             result.write('\n')
             result.write('second_position :: ' + str(count(second_position)))

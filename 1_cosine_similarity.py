@@ -24,7 +24,7 @@ def main():
             original_contents = original.readlines()
             original_contents = [''.join(content.strip().split('|')) for content in original_contents]
 
-        with open('assets/generated_with_out_refactoring.txt', 'r', encoding='utf8') as source:
+        with open('assets/with_position_verification/generated_with_out_refactoring.txt', 'r', encoding='utf8') as source:
             contents = source.readlines()
             contents = [content.strip() for content in contents]
 
