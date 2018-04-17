@@ -39,7 +39,6 @@ def main():
                     cosine = get_cosine(vector1, vector2)
                     if cosine >= 0.3:
                         result.write('|'.join(sentence)+ '=' + str(cosine))
-                        # result.write(str(cosine))
                         result.write('\n')
 
     except Exception as e:
