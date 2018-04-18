@@ -13,14 +13,14 @@ def main():
         # first_method_a()
         # second_method_a()
         # third_method_a()
-        # fourth_method_a()
-        # print('a finished')
+        fourth_method_a()
+        print('a finished')
 
         # first_method_b()
         # second_method_b()
         # third_method_b()
-        # fourth_method_b()
-        # print('b finished')
+        fourth_method_b()
+        print('b finished')
     except Exception as ex:
         print(ex)
     else:

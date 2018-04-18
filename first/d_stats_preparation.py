@@ -15,11 +15,11 @@ def main():
             third_position = [content[1:-1].split(',')[1][2:-1] for content in third_position]
 
         with open('assets/with_out_position_verification/first_cosine_values_ranked_tagged_stats.txt', 'w', encoding='utf8') as result:
-            result.write('first_position :: ' + str(count(first_position)))
+            result.write('position_1 :: ' + str(count(first_position)))
             result.write('\n')
-            result.write('second_position :: ' + str(count(second_position)))
+            result.write('position_2 :: ' + str(count(second_position)))
             result.write('\n')
-            result.write('third_position :: ' + str(count(third_position)))
+            result.write('position_3 :: ' + str(count(third_position)))
 
 if __name__ == '__main__':
     main()
