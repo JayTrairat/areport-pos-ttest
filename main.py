@@ -1,26 +1,19 @@
-from first.a_cosine_similarity import main as first_method_a
-from first.b_ranking import main as second_method_a
-from first.c_pos_tagger import main as third_method_a
-from first.d_stats_preparation import main as fourth_method_a
-
-from second.a_cosine_similarity import main as first_method_b
-from second.b_ranking import main as second_method_b
-from second.c_pos_tagger import main as third_method_b
-from second.d_stats_preparation import main as fourth_method_b
+from pythainlp.tag import pos_tag
+from pythainlp.tokenize import word_tokenize
 
 def main():
     try:
-        # first_method_a()
-        # second_method_a()
-        # third_method_a()
-        fourth_method_a()
-        print('a finished')
+        with open('assets/original.txt', 'r', encoding='utf8') as source:
+            contents = (source.readlines())
+            contents = [content.strip().split('|') for content in contents]
+            contents = [list(filter(lambda x : x.strip(), content)) for content in contents]
 
-        # first_method_b()
-        # second_method_b()
-        # third_method_b()
-        fourth_method_b()
-        print('b finished')
+            tagged_pos = [(pos_tag(content, engine='artagger')) for content in contents]
+            contents = [{'words': tagged_pos[index]} for index, content in enumerate(contents)]
+            contents = [str('|'.join(str(x) for x in content['words']))for content in contents]
+
+            with open('assets/original_tagged.txt', 'w', encoding='utf8') as result:
+                result.write('\n'.join(contents))
     except Exception as ex:
         print(ex)
     else:
